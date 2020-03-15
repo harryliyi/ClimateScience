@@ -1,0 +1,22 @@
+#!/bin/csh -f
+#===============================================================================
+# USERDEFINED(gpc)
+# This is where the batch submission is set.  The above code computes
+# the total number of tasks, nodes, and other things that can be useful
+# here.  Use PBS, BSUB, or whatever the local environment supports.
+#===============================================================================
+
+#SBATCH --job-name vrseasia_19501959_OBS
+#SBATCH -A rrg-pjk-ac
+#SBATCH --nodes=1
+#SBATCH --ntasks=40
+#SBATCH --time=2:00:00
+#SBATCH --output=/scratch/d/dylan/harryli/cesm1/vrcesm/Analysis/vrseasia_AMIP_1979_to_2005/scripts/pre/mpi_OBS.%j.txt
+
+source /scinet/niagara/software/2018a/lmod/lmod/init/csh
+
+cd /scratch/d/dylan/harryli/cesm1/vrcesm/Analysis/vrseasia_AMIP_1979_to_2005/scripts/pre
+
+conda activate py37
+python ./vrcesm_prect_extreme_vs_cordexsea.py
+
