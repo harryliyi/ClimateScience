@@ -1,0 +1,32 @@
+
+scontrol show jobid 2192123
+JobId=2192123 JobName=debugjob-1-harryli
+   UserId=harryli(3033855) GroupId=dylan(6000035) MCS_label=N/A
+   Priority=11868501 Nice=0 Account=rrg-dylan QOS=bump
+   JobState=COMPLETING Reason=TimeLimit Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=0 Reboot=0 ExitCode=0:0
+   RunTime=01:00:24 TimeLimit=01:00:00 TimeMin=N/A
+   SubmitTime=2019-12-11T03:42:20 EligibleTime=2019-12-11T03:42:20
+   AccrueTime=Unknown
+   StartTime=2019-12-11T03:42:20 EndTime=2019-12-11T04:42:44 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2019-12-11T03:42:20
+   Partition=debug AllocNode:Sid=nia-login02:38572
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=nia0312
+   BatchHost=nia0312
+   NumNodes=1 NumCPUs=80 NumTasks=40 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=80,node=1,billing=40
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=0 MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=NO Contiguous=0 Licenses=(null) Network=(null)
+   Command=(null)
+   WorkDir=/gpfs/fs0/scratch/d/dylan/harryli/cesm1/vrcesm/Analysis/vrseasia_AMIP_Aerosol/scripts/pre/extreme
+   Power=
+
+sacct -j 2192123
+       JobID    JobName    Account    Elapsed  MaxVMSize     MaxRSS  SystemCPU    UserCPU ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- ---------- ---------- -------- 
+2192123      debugjob-+  rrg-dylan   01:00:24                        03:02.451   01:12:27      0:0 
+2192123.ext+     extern  rrg-dylan   01:00:24    137068K       804K  00:00.001   00:00:00      0:0 
+2192123.0          bash  rrg-dylan   01:01:20  41335684K  38031216K  03:02.450   01:12:27      0:9 
